@@ -1,6 +1,11 @@
 class HeroinesController < ApplicationController
+
   def index
     @heroines = Heroine.all
+  end
+
+  def search
+    @power = Power.find_by(params[:id])
   end
 
   def show
@@ -21,8 +26,5 @@ class HeroinesController < ApplicationController
       render :new
     end
   end
-
-  
-
 
 end
