@@ -1,0 +1,32 @@
+<h2>Create a New Heroine:</h2>
+
+<%= form_for @heroine do |f| %>
+    <label>Name:</label>
+    <%= f.text_field :name %>
+    <br><br>
+
+    <label>Super Name:</label>
+    <%= f.text_field :super_name %>
+    <br><br>
+
+    <label>Select Power:</label>
+    <%= f.collection_select(:power_id, Power.all, :id, :name) %>
+    <br><br>
+
+    <%= f.submit %>
+<% end %>
+
+<br><br>
+<div class="error" style="color:red">
+
+<% if !flash.empty? %>
+    <b>Errors:</b> <br>
+    <% flash[:errors].each do |k,v| %>
+        <% if v[0] != nil %>
+            <li><%= k.to_s %> <%= v[0] %> </li>
+        <% end %>
+    <% end %>
+
+<% end %>
+
+</div>
