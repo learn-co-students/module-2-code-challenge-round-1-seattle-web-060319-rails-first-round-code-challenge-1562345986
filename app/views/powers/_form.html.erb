@@ -1,0 +1,7 @@
+<%= form_for(@power) do |f| %>
+<%= f.label :name %>
+<%= f.select :name, ["flight", "super strength", "super human senses", "elasticity"] %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.submit %>
+<%end%>

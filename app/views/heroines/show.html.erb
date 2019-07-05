@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body></body>
+    <h1> <%= @heroine.super_name %> </h1>
+
+    <h4>Name: <%= @heroine.name %> </h4>
+    <h4>Power: <%= link_to @heroine.power.name, power_path(@heroine.power) %> </h4>
+</body>
+</html>
