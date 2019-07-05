@@ -15,3 +15,18 @@
 
     <%= f.submit %>
 <% end %>
+
+<br><br>
+<div class="error" style="color:red">
+
+<% if !flash.empty? %>
+    <b>Errors:</b> <br>
+    <% flash[:errors].each do |k,v| %>
+        <% if v[0] != nil %>
+            <li><%= k.to_s %> <%= v[0] %> </li>
+        <% end %>
+    <% end %>
+
+<% end %>
+
+</div>

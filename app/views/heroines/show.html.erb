@@ -3,3 +3,7 @@
 <h3>Super Name: <%= @heroine.super_name%> </h5>
 
 <h3>Power: <%= link_to @heroine.power.name.titleize, @heroine.power %> </h5>
+
+<br><br>
+<%= link_to "Show all Heroines", heroines_path%><br>
+<%= link_to "Show all Powers", powers_path%>

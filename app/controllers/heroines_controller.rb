@@ -15,6 +15,7 @@ class HeroinesController < ApplicationController
   end
 
   def new
+    flash.clear
     @heroine = Heroine.new
   end
 
@@ -23,14 +24,10 @@ class HeroinesController < ApplicationController
     if @heroine.save
       redirect_to @heroine
     else
-      flash.clear
-      flash[:super_name_error] = @heroine.errors.messages[:super_name].first
-      flash[:name_error] = @heroine.errors.messages[:name].first
+      flash[:errors] = @heroine.errors.messages
       render :new
     end
   end
-
-
 
   private
 
