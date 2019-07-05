@@ -1,5 +1,14 @@
 <h2>All Heroines</h2>
 
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search By Superpower:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<%if @search_results == [] && !@search %>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
@@ -8,3 +17,22 @@
     <br>
   <% end %>
 </ul>
+
+<%elsif @search_results == [] && @search%>
+  <p>No heroines with that super power!</p>
+  <%=link_to "Back to list", heroines_path%>
+
+
+<%else%>
+<ul>
+    <% @search_results.each do |heroine| %>
+      <li>
+        <%= link_to heroine.super_name, heroine_path(heroine) %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
+
+  <%end%>
+
+
