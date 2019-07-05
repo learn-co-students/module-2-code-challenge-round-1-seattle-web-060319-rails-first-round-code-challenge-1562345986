@@ -16,6 +16,15 @@
     <%= f.submit %>
 <% end %>
 
+<!--
 <div class="error" style="color:red">
-
+<% if flash[:super_name_error].first.include?("blank") %>
+    <p>Super Name cannot be blank. </p>
+<% elsif flash[:super_name_error].first.include?("taken") %>
+    <p>Sorry, that Super Name is already taken. Please choose a new Super Name.</p>
+<% end %>
+<% if flash[:name_error].first.include?("blank") %>
+    <p>Name cannot be blank</p>
+<% end %>
 </div>
+-->
