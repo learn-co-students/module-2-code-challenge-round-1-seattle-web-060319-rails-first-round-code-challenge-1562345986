@@ -5,6 +5,7 @@ class HeroinesController < ApplicationController
   end
 
   def search
+    # Search function filters the heroines list by inputted power name (string), this would ideally be a dropdown, but the requirements asked for a search field
     power = Power.find_by(:name == params[:q])
     @heroines = Heroine.all.where("power_id = ?" , power.id)
     render :index
