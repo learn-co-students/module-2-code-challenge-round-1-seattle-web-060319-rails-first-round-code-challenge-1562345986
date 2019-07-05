@@ -3,7 +3,7 @@
 <h4>Search by Superpower: </h4>
 <%= form_tag("/heroines/search", method: "post") do %>
     <%= text_field_tag(:q) %>
-    <%= submit_tag("Search")%>
+    <%= submit_tag("Search")%> [<%= link_to "Reset Filter", heroines_path %>]
 <% end %>
 
 <ul>
@@ -14,3 +14,4 @@
     <br> 
   <% end %>
 </ul>
+
