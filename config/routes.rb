@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :powers, only: [:index]
-  resources :heroines, only: [:index]  
+  get '/heroines/search', to: 'heroines#search', as: '/search'
+  resources :powers
+  resources :heroines
 end
